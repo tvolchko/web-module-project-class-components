@@ -16,7 +16,6 @@ class App extends React.Component {
         ...this.state,
         input: e.target.value
     }) 
-    console.log(e.target.value)
 }
   add = (task) => {
    let newTask = {
@@ -53,6 +52,12 @@ class App extends React.Component {
       })
     })
   }
+  clearAll = () => {
+    this.setState({
+      ...this.state,
+      list: []
+    })
+  }
 
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -64,6 +69,7 @@ class App extends React.Component {
         <TodoForm input={this.state.input} change={this.change} add={this.add}/>
         <TodoList toggle={this.handleToggle} list={this.state.list}/>
         <button onClick={this.handleClear}>Clear Complete</button>
+        <button onClick={this.clearAll}>Clear all tasks</button>
       </div>
     );
   }
