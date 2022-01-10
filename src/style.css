@@ -10,3 +10,12 @@ html, body, #root {
 label {
     display:block;
 }
+.complete {
+    text-decoration: line-through;
+    background-color: lightgray;
+    text-align: center;
+}
+.incomplete {
+    background-color: aqua;
+    text-align: center;
+}
